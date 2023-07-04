@@ -89,8 +89,19 @@ export function Car(props: JSX.IntrinsicElements["group"]) {
     }
   });
 
+  const handleDoubleClick = () => {
+    if (group.current) {
+      group.current.rotation.y = 0;
+    }
+  };
+
   return (
-    <group {...props} dispose={null} ref={group}>
+    <group
+      {...props}
+      dispose={null}
+      ref={group}
+      onDoubleClick={handleDoubleClick}
+    >
       <group
         position={[-0.015, -0.009, 0.063]}
         rotation={[-Math.PI / 2, 0, 0]}
